@@ -56,6 +56,9 @@ header {
   padding: 1.5rem;
 
   nav {
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 10rem 0;
     width: 100%;
     position: fixed;
@@ -63,12 +66,12 @@ header {
     right: 0;
     bottom: 0;
     left: 100%;
-    margin-top: 2rem;
     transition: all ease-in 300ms;
     ul {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-left: -30%;
       li {
         margin-bottom: 4rem;
       }
@@ -76,17 +79,20 @@ header {
   }
 
   .show-menu {
-    left: 0;
+    left: 30%;
   }
 
   .hamburger {
+    z-index: 999;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
     span {
-      display: block;
       background-color: black;
-      width: 20px;
+      width: 30px;
       height: 2px;
-      margin-bottom: 4px;
     }
   }
 }
@@ -372,9 +378,37 @@ footer {
   .container {
     padding: 5em 5em 3em 5em;
   }
+
   header {
     padding: 2em 5rem;
+    nav {
+      padding: 0;
+      width: 50%;
+      position: relative;
+      left: 0;
+      ul {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 0;
+        li {
+          display: inline-flex;
+          margin-bottom: 0;
+          #contact {
+            background: $darkBlue;
+            color: $white;
+            padding: 0.5rem 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.1rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .hamburger {
+      display: none;
+    }
   }
+
   .cover-wrapper {
     display: flex;
     align-items: flex-start;

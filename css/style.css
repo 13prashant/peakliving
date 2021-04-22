@@ -58,6 +58,10 @@ header {
 }
 
 header nav {
+  z-index: 99;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 10rem 0;
   width: 100%;
   position: fixed;
@@ -65,7 +69,6 @@ header nav {
   right: 0;
   bottom: 0;
   left: 100%;
-  margin-top: 2rem;
   -webkit-transition: all ease-in 300ms;
   transition: all ease-in 300ms;
 }
@@ -81,6 +84,7 @@ header nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: -30%;
 }
 
 header nav ul li {
@@ -88,19 +92,29 @@ header nav ul li {
 }
 
 header .show-menu {
-  left: 0;
+  left: 30%;
 }
 
 header .hamburger {
+  z-index: 999;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   cursor: pointer;
 }
 
 header .hamburger span {
-  display: block;
   background-color: black;
-  width: 20px;
+  width: 30px;
   height: 2px;
-  margin-bottom: 4px;
 }
 
 .cover {
@@ -421,6 +435,39 @@ footer .copyright p a {
   }
   header {
     padding: 2em 5rem;
+  }
+  header nav {
+    padding: 0;
+    width: 50%;
+    position: relative;
+    left: 0;
+  }
+  header nav ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-left: 0;
+  }
+  header nav ul li {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-bottom: 0;
+  }
+  header nav ul li #contact {
+    background: #2c3450;
+    color: #ffffff;
+    padding: 0.5rem 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+  }
+  header .hamburger {
+    display: none;
   }
   .cover-wrapper {
     display: -webkit-box;
