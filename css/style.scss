@@ -388,6 +388,8 @@ footer {
       width: 50%;
       position: relative;
       left: 0;
+      display: unset;
+
       ul {
         flex-direction: row;
         justify-content: space-between;
