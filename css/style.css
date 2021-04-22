@@ -247,6 +247,20 @@ header .hamburger span {
   padding: 1rem 0.5rem;
 }
 
+.flat-amenities ul {
+  margin-top: 1rem;
+  display: inline-block;
+  list-style: square inside none;
+}
+
+.flat-amenities ul ::marker {
+  color: #2c3450;
+}
+
+.flat-amenities ul li {
+  margin-bottom: 1rem;
+}
+
 footer {
   background: #0f1f47;
 }
@@ -349,6 +363,9 @@ footer .copyright p a {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .project-info img {
+    height: 100%;
+  }
   .amenities-info {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -357,6 +374,10 @@ footer .copyright p a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+  .amenities-info img {
+    height: 100%;
+    width: 50%;
   }
   .amenities-cards {
     -ms-grid-columns: (1fr)[4];

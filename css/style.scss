@@ -219,6 +219,20 @@ header {
   }
 }
 
+.flat-amenities {
+  ul {
+    margin-top: 1rem;
+    display: inline-block;
+    list-style: square inside none;
+    ::marker {
+      color: $darkBlue;
+    }
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 // Footer ==================================================
 
 footer {
@@ -313,10 +327,17 @@ footer {
   .project-info {
     display: flex;
     flex-direction: row;
+    img {
+      height: 100%;
+    }
   }
   .amenities-info {
     display: flex;
     flex-direction: row;
+    img {
+      height: 100%;
+      width: 50%;
+    }
   }
   .amenities-cards {
     grid-template-columns: repeat(4, 1fr);
