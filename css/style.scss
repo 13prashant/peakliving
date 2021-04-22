@@ -91,7 +91,7 @@ header {
   padding-top: 7rem;
 }
 
-.bg-img {
+.mobile-img {
   background-image: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.6) 0%,
@@ -114,7 +114,6 @@ header {
     content: "“";
     position: absolute;
     font-size: 4rem;
-    top: 5rem;
     left: 1rem;
   }
   p {
@@ -224,6 +223,9 @@ header {
   .cover {
     padding-top: 8rem;
   }
+  .title blockquote::before {
+    left: 1.5rem;
+  }
   .download {
     width: 20rem;
   }
@@ -241,6 +243,9 @@ header {
   }
   .cover {
     padding-top: 10rem;
+  }
+  .title blockquote::before {
+    left: 2rem;
   }
   .download-wrapper {
     right: -8rem;
@@ -265,14 +270,61 @@ header {
   header {
     padding: 2em 5rem;
   }
-  .cover {
-    padding-top: 10rem;
+  .cover-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  .title {
+    blockquote {
+      width: 35rem;
+      font-size: 4rem;
+      font-weight: 400;
+    }
+    blockquote::before {
+      font-size: 6rem;
+      left: 5rem;
+    }
+    p {
+      margin-bottom: 0.3rem;
+    }
+    span {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  }
+  .mobile-img {
+    display: none;
+  }
+  .desktop-img {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0.6) 100%
+      ),
+      url(https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=354&q=80);
+    height: 30em;
+    background-size: cover;
+    background-position: center center;
+    margin-top: -10em;
   }
   .download-wrapper {
-    right: -13rem;
+    top: 0;
+    right: 0;
   }
+  .download {
+    padding: 3rem;
+    margin: 0;
+    background: transparent;
+  }
+
   .amenities-cards {
     grid-template-columns: repeat(6, 1fr);
+    p {
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -282,8 +334,8 @@ header {
   header {
     padding: 2em 8rem;
   }
-  .cover {
-    padding-top: 10rem;
+  .title blockquote::before {
+    left: 8rem;
   }
   .card {
     background-color: $white;
