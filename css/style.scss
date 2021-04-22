@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;700&display=swap");
 
+$blue: #0f1f47;
 $darkBlue: rgb(44, 52, 80);
 $white: #ffffff;
 $gray: #f5f5f5;
+$blackText: #000000;
+$whiteText: #ffffff;
+$grayText: #a3a3a3;
 
 body,
 * {
@@ -166,6 +170,8 @@ header {
   }
 }
 
+// Amenities ==================================================
+
 .amenities {
   background-color: $gray;
   .amenities-info {
@@ -185,9 +191,6 @@ header {
     p {
       font-weight: 500;
     }
-  }
-  button {
-    width: 21.5rem;
   }
 }
 
@@ -213,6 +216,63 @@ header {
     background-color: $white;
     min-width: 6.5rem;
     padding: 1rem 0.5rem;
+  }
+}
+
+// Footer ==================================================
+
+footer {
+  background: $blue;
+  h2 {
+    font-size: 1rem;
+    color: $whiteText;
+    margin-top: 2rem;
+  }
+  p {
+    color: $grayText;
+  }
+  .about {
+    h2 {
+      margin-top: 0;
+    }
+  }
+  button {
+    background-color: $gray;
+    color: $blackText;
+    margin-top: 0rem;
+  }
+  ul {
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    li {
+      a {
+        color: $grayText;
+        margin-right: 1rem;
+      }
+    }
+  }
+  .social {
+    h2 {
+      margin-bottom: 1rem;
+    }
+    i {
+      margin-bottom: 1rem;
+      margin-right: 0.5rem;
+      // background-color: $white;
+      color: $grayText;
+      font-size: 2rem;
+    }
+  }
+  .copyright {
+    p {
+      font-size: 0.9rem;
+      span {
+        color: red;
+      }
+      a {
+        color: $whiteText;
+      }
+    }
   }
 }
 
@@ -260,6 +320,30 @@ header {
   }
   .amenities-cards {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  footer {
+    h2 {
+      margin-top: 0;
+    }
+    .content-wrapper {
+      display: flex;
+    }
+    .about {
+      margin-right: 2rem;
+      flex-grow: 1;
+      flex-shrink: 4;
+      button {
+        margin-bottom: 1rem;
+      }
+    }
+    .navigation {
+      margin-right: 2rem;
+      flex-grow: 1;
+    }
+    .social {
+      flex-grow: 1;
+    }
   }
 }
 
