@@ -33,6 +33,7 @@ button,
   letter-spacing: 0.1rem;
   cursor: pointer;
   margin-top: 1rem;
+  display: inline-block;
 }
 
 p {
@@ -55,13 +56,16 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header nav {
-  z-index: 99;
+  z-index: 98;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,12 +103,16 @@ header nav ul li {
   margin-bottom: 4rem;
 }
 
+header nav ul li a {
+  font-weight: 700;
+}
+
 header .show-menu {
   left: 30%;
 }
 
 header .hamburger {
-  z-index: 999;
+  z-index: 99;
   height: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,7 +149,7 @@ header .close > #span3 {
           transform: rotate(45deg) translate(-7px, -6px);
 }
 
-.cover {
+.pt {
   padding-top: 13rem;
 }
 
@@ -226,6 +234,15 @@ header .close > #span3 {
   font-weight: 500;
 }
 
+.project .project-dsc .venture {
+  margin-top: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
 .amenities {
   background-color: #f5f5f5;
 }
@@ -285,18 +302,30 @@ header .close > #span3 {
   padding: 1rem 0.5rem;
 }
 
-.flat-amenities ul {
-  margin-top: 1rem;
-  display: inline-block;
-  list-style: square inside none;
+.flat-amenities-info {
+  background: #ffffff;
 }
 
-.flat-amenities ul ::marker {
-  color: #2c3450;
+.flat-amenities-info img {
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.flat-amenities ul li {
+.flat-amenities-info h2 {
   margin-bottom: 1rem;
+}
+
+.flat-amenities-info .flat-amenities ul {
+  margin-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.flat-amenities-info .flat-amenities ul li {
+  border-bottom: 1px solid #0f1f47;
+  padding-bottom: 1rem;
 }
 
 footer {
@@ -317,21 +346,23 @@ footer .about h2 {
   margin-top: 0;
 }
 
-footer button {
+footer .btn {
   background-color: #f5f5f5;
   color: #000000;
   margin-top: 0rem;
 }
 
 footer ul {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.5rem;
   margin-top: 1rem;
 }
 
 footer ul li a {
   color: #a3a3a3;
-  margin-right: 1rem;
 }
 
 footer .social h2 {
@@ -357,11 +388,15 @@ footer .copyright p a {
   color: #ffffff;
 }
 
+footer hr {
+  margin-top: 1rem;
+}
+
 @media only screen and (min-width: 600px) {
   .container {
     padding: 5em 1.5em 3em 1.5em;
   }
-  .cover {
+  .pt {
     padding-top: 13rem;
   }
   .title blockquote::before {
@@ -383,7 +418,7 @@ footer .copyright p a {
   header {
     padding: 2rem;
   }
-  .cover {
+  .pt {
     padding-top: 15rem;
   }
   .title blockquote::before {
@@ -421,6 +456,10 @@ footer .copyright p a {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
+  .flat-amenities ul {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
   footer h2 {
     margin-top: 0;
   }
@@ -457,8 +496,8 @@ footer .copyright p a {
   .container {
     padding: 5em 5em 3em 5em;
   }
-  .cover {
-    padding-top: 15rem;
+  .pt {
+    padding-top: 12rem;
   }
   header {
     padding: 2em 5rem;
@@ -493,6 +532,9 @@ footer .copyright p a {
     font-size: 0.9rem;
     letter-spacing: 0.1rem;
     cursor: pointer;
+  }
+  header nav ul li a {
+    font-weight: 500;
   }
   header .hamburger {
     display: none;
@@ -558,8 +600,8 @@ footer .copyright p a {
   .container {
     padding: 5em 8em 3em 8em;
   }
-  .cover {
-    padding-top: 15rem;
+  .pt {
+    padding-top: 12rem;
   }
   header {
     padding: 2em 8rem;

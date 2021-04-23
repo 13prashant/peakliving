@@ -38,6 +38,7 @@ button,
   letter-spacing: 0.1rem;
   cursor: pointer;
   margin-top: 1rem;
+  display: inline-block;
 }
 
 p {
@@ -56,16 +57,16 @@ header {
   padding: 1.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   nav {
-    z-index: 99;
+    z-index: 98;
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    // overflow-y: hidden;
     position: fixed;
     top: 0;
     right: 0;
@@ -79,6 +80,9 @@ header {
       margin-left: -30%;
       li {
         margin-bottom: 4rem;
+        a {
+          font-weight: 700;
+        }
       }
     }
   }
@@ -88,7 +92,7 @@ header {
   }
 
   .hamburger {
-    z-index: 999;
+    z-index: 99;
     height: 20px;
     display: flex;
     flex-direction: column;
@@ -112,7 +116,7 @@ header {
   }
 }
 
-.cover {
+.pt {
   padding-top: 13rem;
 }
 
@@ -188,6 +192,12 @@ header {
     p {
       font-weight: 500;
     }
+    .venture {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
   }
 }
 
@@ -240,16 +250,24 @@ header {
   }
 }
 
-.flat-amenities {
-  ul {
-    margin-top: 1rem;
-    display: inline-block;
-    list-style: square inside none;
-    ::marker {
-      color: $darkBlue;
-    }
-    li {
-      margin-bottom: 1rem;
+.flat-amenities-info {
+  background: $white;
+  img {
+    height: 15rem;
+    object-fit: cover;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .flat-amenities {
+    ul {
+      margin-top: 1rem;
+      display: grid;
+      grid-gap: 1rem;
+      li {
+        border-bottom: 1px solid $blue;
+        padding-bottom: 1rem;
+      }
     }
   }
 }
@@ -271,18 +289,19 @@ footer {
       margin-top: 0;
     }
   }
-  button {
+  .btn {
     background-color: $gray;
     color: $blackText;
     margin-top: 0rem;
   }
   ul {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
     margin-top: 1rem;
     li {
       a {
         color: $grayText;
-        margin-right: 1rem;
       }
     }
   }
@@ -309,13 +328,16 @@ footer {
       }
     }
   }
+  hr {
+    margin-top: 1rem;
+  }
 }
 
 @media only screen and (min-width: 600px) {
   .container {
     padding: 5em 1.5em 3em 1.5em;
   }
-  .cover {
+  .pt {
     padding-top: 13rem;
   }
   .title blockquote::before {
@@ -336,7 +358,7 @@ footer {
   header {
     padding: 2rem;
   }
-  .cover {
+  .pt {
     padding-top: 15rem;
   }
   .title blockquote::before {
@@ -362,6 +384,11 @@ footer {
   }
   .amenities-cards {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .flat-amenities {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   footer {
@@ -394,8 +421,8 @@ footer {
     padding: 5em 5em 3em 5em;
   }
 
-  .cover {
-    padding-top: 15rem;
+  .pt {
+    padding-top: 12rem;
   }
 
   header {
@@ -414,6 +441,7 @@ footer {
         li {
           display: inline-flex;
           margin-bottom: 0;
+
           #contact {
             background: $darkBlue;
             color: $white;
@@ -421,6 +449,9 @@ footer {
             font-size: 0.9rem;
             letter-spacing: 0.1rem;
             cursor: pointer;
+          }
+          a {
+            font-weight: 500;
           }
         }
       }
@@ -491,8 +522,8 @@ footer {
   .container {
     padding: 5em 8em 3em 8em;
   }
-  .cover {
-    padding-top: 15rem;
+  .pt {
+    padding-top: 12rem;
   }
   header {
     padding: 2em 8rem;
